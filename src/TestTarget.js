@@ -1,5 +1,10 @@
 import React, {useState, useEffect} from "react";
 
+
+// The following components are for testing targets:
+// See the detail in TestTarget.*.test.js
+
+
 export const Hello = (props) => {
   if (props.name) {
     return <h1>Hello, {props.name}</h1>;

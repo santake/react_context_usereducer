@@ -5,39 +5,40 @@ import {act} from "react-dom/test-utils";
 // Target:
 import {Hello} from "./TestTarget";
 
-
-let container = null;
+let containerHello = null;
 
 beforeEach(() => {
-  container = document.createElement("div");
-  document.body.appendChild(container);
+  containerHello = document.createElement("div");
+  document.body.appendChild(containerHello);
 });
 
 afterEach(() => {
-  unmountComponentAtNode(container);
-  container.remove();
-  container = null;
+  unmountComponentAtNode(containerHello);
+  containerHello.remove();
+  containerHello = null;
 });
 
-it("Renders w/ or w/o a name",
-  () => {
+// test(name, function, timeout). Or you can use it() = alias.
+test("Renders w/ or w/o a name", () => {
     // 1:
     act(() => {
-      render(<Hello/>, container);
+      // Render components:
+      render(<Hello/>, containerHello);
     });
-    expect(container.textContent).toBe("Hey, stranger");
+    // Make assertions:
+    expect(containerHello.textContent).toBe("Hey, stranger");
 
     //2:
-    act(()=> {
-      render(<Hello name={'Jenny'}/>, container);
+    act(() => {
+      render(<Hello name={'Jenny'}/>, containerHello);
     });
-    expect(container.textContent).toBe("Hello, Jenny");
+    expect(containerHello.textContent).toBe("Hello, Jenny");
 
     //3:
-    act(()=> {
-      render(<Hello name={'Bob'}/>, container);
+    act(() => {
+      render(<Hello name={'Bob'}/>, containerHello);
     });
-    expect(container.textContent).toBe("Hello, Bob");
+    expect(containerHello.textContent).toBe("Hello, Bob");
 
   }
 );

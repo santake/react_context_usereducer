@@ -20,12 +20,13 @@ afterEach(() => {
 });
 
 
-it("Testing Toggle", () => {
+test("Testing Toggle", () => {
   const onChange = jest.fn();
   act(() => {
+    // Render component:
     render(<Toggle onChange={onChange}/>, container);
   });
-
+  // Make assertions:
   const button = document.querySelector("[data-testid=toggle]");
   expect(button.innerHTML).toBe("Turn on");
 
