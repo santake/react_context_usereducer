@@ -4,6 +4,7 @@ import ThemeContext from "./theme-context";
 
 import './App.css';
 import UseReducerSample from "./UseReducerSample";
+import {UseRefSample} from "./UseRefSample";
 
 
 function App() {
@@ -23,6 +24,10 @@ function App() {
       </div>
 
       <UseReducerSample/>
+
+      <hr/>
+
+      <UseRefSample/>
 
 
     </div>
