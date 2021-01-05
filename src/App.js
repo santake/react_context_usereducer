@@ -5,7 +5,7 @@ import ThemeContext from "./theme-context";
 import './App.css';
 import UseReducerSample from "./UseReducerSample";
 import {UseRefSample} from "./UseRefSample";
-
+import {Counter} from './LocalStorageCounter';
 
 function App() {
   const theme = useContext(ThemeContext);
@@ -29,6 +29,8 @@ function App() {
 
       <UseRefSample/>
 
+      <hr/>
+      <Counter/>
 
     </div>
   );
