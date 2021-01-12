@@ -27,7 +27,8 @@ export const TestUseCallback = () => {
 }
 
 
-// useMemo() is important: it check if the value 'increment' changes or not, and rerender it only if the value changes.
+// React.memo() is important; it checks whether the object 'increment' changes or not,
+// and re-render it only if the object is different from the previous one.
 export const Counter = React.memo(({increment}) => {
   useCountRenders();
   return <button onClick={ () => increment(3) }>Count up!</button>;
@@ -36,6 +37,6 @@ export const Counter = React.memo(({increment}) => {
 
 // this is only to check if the function is (re)rendered.
 export const useCountRenders = () => {
-  const renders = useRef(0);
-  console.log("renders: " + renders.current++);
+  const renderCounter = useRef(0);
+  console.log("renders: " + renderCounter.current++);
 }
